@@ -1,6 +1,8 @@
-bool[,] gameBoard = /* contenido del tablero */;
-int boardWidth = gameBoard.GetLength(0);
-int boardHeight = gameBoard.GetLength(1);
+using Ucu.Poo.GameOfLife;
+
+Board gameBoard = new Board() /* contenido del tablero */;
+int boardWidth = gameBoard.Width();
+int boardHeight = gameBoard.Height();
 
 bool[,] cloneboard = new bool[boardWidth, boardHeight];
 for (int x = 0; x < boardWidth; x++)
@@ -12,27 +14,27 @@ for (int x = 0; x < boardWidth; x++)
         {
             for (int j = y-1;j<=y+1;j++)
             {
-                if(i>=0 && i<boardWidth && j>=0 && j < boardHeight && gameBoard[i,j])
+                if(i>=0 && i<boardWidth && j>=0 && j < boardHeight && gameBoard.GetValue(i,j))
                 {
                     aliveNeighbors++;
                 }
             }
         }
-        if(gameBoard[x,y])
+        if(gameBoard.GetValue(x,y))
         {
             aliveNeighbors--;
         }
-        if (gameBoard[x,y] && aliveNeighbors < 2)
+        if (gameBoard.GetValue(x,y) && aliveNeighbors < 2)
         {
             //Celula muere por baja población
             cloneboard[x,y] = false;
         }
-        else if (gameBoard[x,y] && aliveNeighbors > 3)
+        else if (gameBoard.GetValue(x,y) && aliveNeighbors > 3)
         {
             //Celula muere por sobrepoblación
             cloneboard[x,y] = false;
         }
-        else if (!gameBoard[x,y] && aliveNeighbors == 3)
+        else if (!gameBoard.GetValue(x,y) && aliveNeighbors == 3)
         {
             //Celula nace por reproducción
             cloneboard[x,y] = true;
@@ -40,8 +42,8 @@ for (int x = 0; x < boardWidth; x++)
         else
         {
             //Celula mantiene el estado que tenía
-            cloneboard[x,y] = gameBoard[x,y];
+            cloneboard[x,y] = gameBoard.GetValue(x,y);
         }
     }
 }
-gameBoard = cloneboard;
+bool[,] Board = cloneboard;
