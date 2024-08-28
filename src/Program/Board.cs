@@ -27,4 +27,8 @@ public class Board
         return board.GetLength(1);
     }
 
+    public Board(int i, int j)                      //metodo constructor
+    {
+        board = new bool[i, j];
+    }
 }
