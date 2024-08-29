@@ -6,8 +6,8 @@ using System.Text; // Importa el espacio de nombres System.Text, que contiene la
     {
         public static void PrintBoard(bool[,] board) // Declara un método público y estático llamado PrintBoard que toma una matriz bidimensional de booleanos como parámetro.
         {
-            int filas = board.GetLength(0); // Obtiene el número de filas de la matriz y lo almacena en la variable rows.
-            int columnas = board.GetLength(1); // Obtiene el número de columnas de la matriz y lo almacena en la variable cols.
+            int filas = board.GetLength(0); // Obtiene el número de filas de la matriz y lo almacena en la variable filas.
+            int columnas = board.GetLength(1); // Obtiene el número de columnas de la matriz y lo almacena en la variable columnas.
 
             StringBuilder s = new StringBuilder(); // Crea una nueva instancia de StringBuilder para construir la cadena de salida.
             for (int y = 0; y < filas; y++) // Itera sobre cada fila de la matriz.
