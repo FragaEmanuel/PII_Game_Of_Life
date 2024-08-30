@@ -14,10 +14,10 @@ namespace Ucu.Poo.GameOfLife
             StringBuilder s = new StringBuilder(); // Crea una instancia de StringBuilder para construir la salida en texto
 
             // Itera sobre cada fila
-            for (int y = 0; y < filas; y++)
+            for (int x = 0; x < filas-1; x++)
             {
                 // Itera sobre cada columna
-                for (int x = 0; x < columnas; x++)
+                for (int y = 0; y < columnas-1; y++)
                 {
                     if (board.GetValue(x, y)) // Asegúrate de que GetValue toma (x, y) si la convención es (columna, fila)
                     {
