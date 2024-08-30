@@ -3,7 +3,7 @@ using System;
 
 public class Logic
 {
-    public Board Avanzar(Board gameBoard)
+    public static Board Avanzar(Board gameBoard)
     {
         int boardWidth = gameBoard.Width();
         int boardHeight = gameBoard.Height();
