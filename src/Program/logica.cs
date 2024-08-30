@@ -3,15 +3,15 @@ using System;
 
 public class Logic
 {
-    public static Board Avanzar(Board gameBoard)
+    public static void Avanzar(Board gameBoard)
     {
         int boardWidth = gameBoard.Width();
         int boardHeight = gameBoard.Height();
 
         Board cloneboard = new Board(boardWidth,boardHeight);
-        for (int x = 0; x < boardWidth; x++)
+        for (int x = 0; x < boardWidth-1; x++)
         {
-            for (int y = 0; y < boardHeight; y++)
+            for (int y = 0; y < boardHeight-1; y++)
             {
                 int aliveNeighbors = 0;
                 for (int i = x - 1; i <= x + 1; i++)
@@ -54,6 +54,6 @@ public class Logic
         }
 
         gameBoard = cloneboard;
-        return gameBoard;
+        //return gameBoard;
     }
 }

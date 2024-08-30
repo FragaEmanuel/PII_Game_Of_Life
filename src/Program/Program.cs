@@ -12,9 +12,10 @@ namespace Ucu.Poo.GameOfLife
             Board pantalla = fileReader.Return();
             while (true)
             {
+                System.Console.Clear();
                 Printer.PrintBoard(pantalla);
                 Logic.Avanzar(pantalla);
-                Thread.Sleep(3000);
+                Thread.Sleep(300);
                 System.Console.Clear();
             }
         }
