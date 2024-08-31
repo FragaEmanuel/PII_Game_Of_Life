@@ -14,7 +14,7 @@ namespace Ucu.Poo.GameOfLife
             {
                 System.Console.Clear();
                 Printer.PrintBoard(pantalla);
-                Logic.Avanzar(pantalla);
+                pantalla = Logic.Avanzar(pantalla);
                 Thread.Sleep(300);
                 System.Console.Clear();
             }

@@ -3,7 +3,7 @@ using System;
 
 public class Logic
 {
-    public static void Avanzar(Board gameBoard)
+    public static Board Avanzar(Board gameBoard)
     {
         int boardWidth = gameBoard.Width();
         int boardHeight = gameBoard.Height();
@@ -54,6 +54,6 @@ public class Logic
         }
 
         gameBoard = cloneboard;
-        //return gameBoard;
+        return gameBoard;
     }
 }
