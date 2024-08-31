@@ -1,26 +1,22 @@
 using Ucu.Poo.GameOfLife;
-using System;
 
 public class Logic
 {
-    public static Board Avanzar(Board gameBoard)
+    public static Board Avanzar(Board gameBoard)            //Metodo para generar la siguiente generacion
     {
-        int boardWidth = gameBoard.Width();
-        int boardHeight = gameBoard.Height();
-
-        Board cloneboard = new Board(boardWidth,boardHeight);
-        for (int x = 0; x < boardWidth-1; x++)
+        Board cloneboard = new Board(gameBoard.Width(),gameBoard.Height());     //Crea un segundo Board para guardar la siguiente generacion
+        for (int x = 0; x < gameBoard.Width()-1; x++)           //For que recorre las filas
         {
-            for (int y = 0; y < boardHeight-1; y++)
+            for (int y = 0; y < gameBoard.Height()-1; y++)          //For que recorre las columnas
             {
-                int aliveNeighbors = 0;
-                for (int i = x - 1; i <= x + 1; i++)
+                int aliveNeighbors = 0;         //establece/reincia el número de celulas vecinas
+                for (int i = x - 1; i <= x + 1; i++)            //revisa los alrededores de la celula
                 {
                     for (int j = y - 1; j <= y + 1; j++)
                     {
-                        if (i >= 0 && i < boardWidth && j >= 0 && j < boardHeight && gameBoard.GetValue(i, j))
+                        if (i >= 0 && i < gameBoard.Width() && j >= 0 && j < gameBoard.Height() && gameBoard.GetValue(i, j))        //Se fija si tiene vecinos y los suma
                         {
-                            aliveNeighbors++;
+                            aliveNeighbors++;       //Suma si hay vecinos
                         }
                     }
                 }
@@ -53,7 +49,7 @@ public class Logic
             }
         }
 
-        gameBoard = cloneboard;
-        return gameBoard;
+        gameBoard = cloneboard;         //Remplaza el tablero por el nuevo
+        return gameBoard;               //Devuelve el tablero actualizado
     }
 }

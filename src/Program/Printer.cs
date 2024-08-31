@@ -5,7 +5,7 @@ namespace Ucu.Poo.GameOfLife
 {
     public static class Printer
     {
-        public static void PrintBoard(Board board)
+        public static void PrintBoard(Board board)          //Metodo para imprimir
         {
             // Obtiene el número de filas y columnas del tablero
             int filas = board.Height(); 
